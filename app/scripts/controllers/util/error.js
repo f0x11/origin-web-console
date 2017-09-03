@@ -8,19 +8,19 @@
  * Controller of the openshiftConsole
  */
 angular.module('openshiftConsole')
-  .controller('ErrorController', function ($scope, $window) {
+  .controller('ErrorController', function ($scope, $window, gettext, gettextCatalog) {
     var params = URI(window.location.href).query(true);
     var error = params.error;
 
     switch(error) {
       case 'access_denied':
-        $scope.errorMessage = "Access denied";
+        $scope.errorMessage = gettextCatalog.getString(gettext("Access denied"));
         break;
       case 'not_found':
-        $scope.errorMessage = "Not found";
+        $scope.errorMessage = gettextCatalog.getString(gettext("Not found"));
         break;
       case 'invalid_request':
-        $scope.errorMessage = "Invalid request";
+        $scope.errorMessage = gettextCatalog.getString(gettext("Invalid request"));
         break;
       case 'API_DISCOVERY':
         $scope.errorLinks = [{
@@ -30,7 +30,7 @@ angular.module('openshiftConsole')
         }];
         break;
       default:
-        $scope.errorMessage = "An error has occurred";
+        $scope.errorMessage = gettextCatalog.getString(gettext("An error has occurred"));
     }
 
     if (params.error_description) {
