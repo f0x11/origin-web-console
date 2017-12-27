@@ -33,7 +33,8 @@ angular
     'ab-base64',
     'openshiftCommonServices',
     'openshiftCommonUI',
-    'webCatalog'
+    'webCatalog',
+    'gettext'
   ])
   .config(function ($routeProvider) {
     var landingPageRoute;
@@ -505,6 +506,16 @@ angular
       // since iOS will treat the first tap as a hover if it changes the DOM
       // content (e.g. using :before pseudo-elements).
       $('body').addClass('ios');
+    }
+  })
+  .run(function($window, gettextCatalog, amMoment){
+    gettextCatalog.debug = false;
+    var lang = $window.OPENSHIFT_LANG;
+    if (lang !== 'en') {
+      gettextCatalog.loadRemote('languages/' + lang + '.json');
+      gettextCatalog.setCurrentLanguage(lang);
+
+      amMoment.changeLocale(lang.toLowerCase());
     }
   });
 

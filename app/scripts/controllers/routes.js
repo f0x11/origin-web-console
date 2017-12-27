@@ -8,7 +8,7 @@
  * Controller of the openshiftConsole
  */
 angular.module('openshiftConsole')
-  .controller('RoutesController', function ($routeParams, $scope, DataService, $filter, LabelFilter, ProjectsService) {
+  .controller('RoutesController', function ($routeParams, $scope, DataService, $filter, LabelFilter, ProjectsService, gettext) {
     $scope.projectName = $routeParams.project;
     $scope.unfilteredRoutes = {};
     $scope.routes = {};

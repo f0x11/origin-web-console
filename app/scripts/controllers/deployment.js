@@ -22,7 +22,8 @@ angular.module('openshiftConsole')
                         Navigate,
                         OwnerReferencesService,
                         ProjectsService,
-                        StorageService) {
+                        StorageService,
+                        gettext) {
     var imageStreamImageRefByDockerReference = {}; // lets us determine if a particular container's docker image reference belongs to an imageStream
 
     $scope.projectName = $routeParams.project;
@@ -36,7 +37,7 @@ angular.module('openshiftConsole')
     $scope.imagesByDockerReference = {};
     $scope.breadcrumbs = [
       {
-        title: "Deployments",
+        title: gettext("Deployments"),
         link: "project/" + $routeParams.project + "/browse/deployments"
       },
       {

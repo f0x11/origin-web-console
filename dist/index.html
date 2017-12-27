@@ -4,14 +4,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE"/>
 <meta charset="utf-8">
 <base href="/">
-<title>OpenShift Web Console</title>
+<title>DataMan OS</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" type="image/png" href="images/favicon.png"/>
-<link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
+<link rel="icon" type="image/x-icon" href="images/favicon.png"/>
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-precomposed.png">
+<<<<<<< HEAD
 <link rel="mask-icon" href="images/mask-icon.svg" color="#DB242F">
 <meta name="application-name" content="OpenShift">
+=======
+<meta name="application-name" content="DataMan OS">
+>>>>>>> a7d6e5ea... DM update.
 <meta name="msapplication-TileColor" content="#000000">
 <meta name="msapplication-TileImage" content="images/mstile-144x144.png">
 <link rel="stylesheet" href="styles/vendor.css">
@@ -22,6 +26,7 @@
 <body class="console-os" ng-class="{ 'has-project-bar': view.hasProject }">
 <osc-header></osc-header>
 <toast-notifications></toast-notifications>
+<<<<<<< HEAD
 <notification-drawer-wrapper></notification-drawer-wrapper>
 <div class="container-pf-nav-pf-vertical" ng-class="{ 'collapsed-nav': nav.collapsed }">
 <div ng-view class="view">
@@ -29,12 +34,31 @@
 <div class="middle-content">
 <div class="empty-state-message loading">
 <h2 class="text-center" id="temporary-loading-message" style="display: none">Loading...</h2>
+=======
+<div ng-view>
+<nav class="navbar navbar-pf-alt top-header" role="navigation">
+<div row>
+<div class="navbar-header">
+<a class="navbar-brand" id="openshift-logo" href="./">
+<div id="header-logo"></div>
+</a>
+</div>
+</div>
+</nav>
+<div class="wrap no-sidebar">
+<div class="middle surface-shaded">
+<div class="middle-section">
+<div class="empty-state-message">
+<h2 class="text-center" id="temporary-loading-message" style="display: none" translate>Loading...</h2>
+>>>>>>> a7d6e5ea... DM update.
 <script>document.getElementById('temporary-loading-message').style.display = "";</script>
 </div>
 <noscript>
 <div class="attention-message">
-<h1>JavaScript Required</h1>
-<p>The OpenShift web console requires JavaScript to provide a rich interactive experience. Please enable JavaScript to continue. If you do not wish to enable JavaScript or are unable to do so, you may use the command-line tools to manage your projects and applications instead.</p>
+<h1 translate>JavaScript Required</h1>
+<p><translate>The DataMan OS web console requires JavaScript to provide a rich interactive experience.</translate>
+<translate>Please enable JavaScript to continue. If you do not wish to enable JavaScript or are unable to do so,</translate>
+<translate>you may use the command-line tools to manage your projects and applications instead.</translate></p>
 </div>
 </noscript>
 </div>
